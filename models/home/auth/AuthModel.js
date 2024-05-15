@@ -2,6 +2,7 @@ import randomImageGenerator from "../../../utils/randomImageGenerator.js";
 import { Authentication } from "../../../firebase/authentication.js";
 import Firestore from "../../../firebase/firestore.js";
 import AuthEntity from "../AuthEntity.js";
+import verifyUIDInCollection from "../../../utils/firebase/firestore/verifyUIDInCollection.js";
 
 export default class Auth extends AuthEntity {
   constructor(email, password, photoUrl, phoneNumber) {
@@ -25,7 +26,7 @@ export default class Auth extends AuthEntity {
 
     this.firestoreRef.uid = response.uid;
     this.firestoreRef.create({
-      verified: false,
+      undefined,
     });
     return [response, link];
   }
@@ -33,10 +34,8 @@ export default class Auth extends AuthEntity {
   loginUser() {
     const response = this.authRef.loginUser(this.email, this.password);
     console.log(response);
-    this.firestoreRef.uid = response.uid;
-    this.firestoreRef.update({
-      verified: true,
-    });
+    verifyUIDInCollection(response.uid, "auth/admin");
+    verifyUIDInCollection(response.uid, "auth/organization");
     return response;
   }
 }
