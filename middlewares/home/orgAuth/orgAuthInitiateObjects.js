@@ -1,4 +1,4 @@
-import OrgAuth from "../../../models/home/orgAuth/OrgAuthModel.js";
+import OrgAuth from "../../../models/home/auth/OrgAuthModel.js";
 
 const orgAuthInitiateObjects = (req, _, next) => {
   const {
