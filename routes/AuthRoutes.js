@@ -3,15 +3,16 @@ import {
   handleResetPassword,
   handleSignup,
   handleUsers,
-} from "../../../handlers/home/authHandlers.js";
+} from "../handlers/home/authHandlers.js";
 import { Router } from "express";
-import authInitiateObjects from "../../../middlewares/home/auth/authInitiateObjects.js";
-import orgAuthInitiateObjects from "../../../middlewares/home/orgAuth/orgAuthInitiateObjects.js";
+import authInitiateObjects from "../middlewares/home/auth/authInitiateObjects.js";
+import orgAuthInitiateObjects from "../middlewares/home/orgAuth/orgAuthInitiateObjects.js";
+import adminAuthInitiateObjects from "../middlewares/admin/adminAuthInitiateObjects.js";
 
 const authRouter = new Router();
 
 authRouter.post("/org/signup", orgAuthInitiateObjects, handleSignup);
-authRouter.post("/admin/");
+authRouter.post("/admin/signup", adminAuthInitiateObjects, handleSignup);
 authRouter.post("/signup", authInitiateObjects, handleSignup);
 authRouter.post("/login", authInitiateObjects, handleLogin);
 authRouter.put("/reset-password", authInitiateObjects, handleResetPassword);

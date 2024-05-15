@@ -1,4 +1,4 @@
-import AdminAuthModel from "../../models/admin/AdminAuthModel";
+import AdminAuthModel from "../../models/admin/AdminAuthModel.js";
 
 const adminAuthInitiateObjects = (req, _, next) => {
   const { email, password, photoURL, phoneNumber, addedBy } = req.body;

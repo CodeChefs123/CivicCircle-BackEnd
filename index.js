@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
 import PORT from "./config/app.js";
-import authRouter from "./routes/home/auth/AuthRoutes.js";
+import authRouter from "./routes/AuthRoutes.js";
 
 const app = express();
 
