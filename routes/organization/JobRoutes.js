@@ -1,11 +1,11 @@
 import { Router } from "express";
-import jobInitiateObjects from "../../middlewares/organization/jobInitiateObjects";
+import jobInitiateObjects from "../../middlewares/organization/jobInitiateObjects.js";
 import {
   createJob,
   deleteJob,
   getAllJobs,
   updateJob,
-} from "../../handlers/organization/jobHandlers";
+} from "../../handlers/organization/jobHandlers.js";
 
 const jobRouters = Router();
 jobRouters.use(jobInitiateObjects);

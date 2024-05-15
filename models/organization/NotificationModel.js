@@ -1,4 +1,4 @@
-import Firestore from "../../firebase/firestore";
+import Firestore from "../../firebase/firestore.js";
 
 export default class NotificationModel {
   constructor(orgUid) {
