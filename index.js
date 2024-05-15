@@ -26,9 +26,10 @@ app.use((err, _, res, __) => {
   console.error(err.stack);
   res.status(500).send("Internal Server Error");
 });
-app.use(extractUidAndVerification);
 app.use("/auth", authRouter);
+app.use(extractUidAndVerification);
 app.use("/admin", adminVerificationRouter);
+app.use("/org/notifications", notificationRouter);
 // Start the server
 const server = app.listen(PORT, () => {
   const host = server.address().address;
