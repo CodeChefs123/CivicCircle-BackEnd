@@ -6,7 +6,9 @@ import PORT from "./config/app.js";
 import authRouter from "./routes/AuthRoutes.js";
 import extractUidAndVerification from "./middlewares/extractUidAndVerification.js";
 import adminVerificationRouter from "./routes/AdminOrganizationVertifyRoutes.js";
-
+import notificationRouter from "./routes/organization/NotificationRoutes.js";
+import jobRouters from "./routes/organization/JobRoutes.js";
+import trainingRouter from "./routes/organization/TrainingRoutes.js";
 const app = express();
 
 app.use(
@@ -26,11 +28,13 @@ app.use((err, _, res, __) => {
   console.error(err.stack);
   res.status(500).send("Internal Server Error");
 });
+
 app.use("/auth", authRouter);
 app.use(extractUidAndVerification);
 app.use("/admin", adminVerificationRouter);
 app.use("/org/notifications", notificationRouter);
 app.use("/org/jobs", jobRouters);
+app.use('/org/training',trainingRouter)
 // Start the server
 const server = app.listen(PORT, () => {
   const host = server.address().address;

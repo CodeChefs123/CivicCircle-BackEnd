@@ -1,4 +1,4 @@
-import FirestoreAbstract from "../../firebase/firestoreAbstract";
+import FirestoreAbstract from "../../firebase/firestoreAbstract.js";
 
 export default class JobModel extends FirestoreAbstract {
   constructor(
