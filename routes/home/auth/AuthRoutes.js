@@ -3,7 +3,7 @@ import {
   handleResetPassword,
   handleSignup,
   handleUsers,
-} from "../../../handlers/home/auth/authHandlers.js";
+} from "../../../handlers/home/authHandlers.js";
 import { Router } from "express";
 import authInitiateObjects from "../../../middlewares/home/auth/authInitiateObjects.js";
 
