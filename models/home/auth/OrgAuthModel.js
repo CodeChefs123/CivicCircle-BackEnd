@@ -1,4 +1,4 @@
-import randomImageGenerator from "../../../utils/randomImageGenerator.js";
+import randomImageGenerator from "../../../utils/helper/randomImageGenerator.js";
 import { Authentication } from "../../../firebase/authentication.js";
 import Firestore from "../../../firebase/firestore.js";
 import Storage from "../../../firebase/storage.js";
@@ -49,7 +49,7 @@ export default class OrgAuth extends AuthEntity {
       photoURL: this.photoUrl || randomImageGenerator(),
       phoneNumber: this.phoneNumber || undefined,
     });
-    const link = await this.authRef.verificationEmail(this.email);
+    // const link = await this.authRef.verificationEmail(this.email);
     console.log(response);
     const [certificateRegistrationUrl, annualReportUrl, listBoardMembersUrl] =
       storeData(
@@ -65,6 +65,6 @@ export default class OrgAuth extends AuthEntity {
       annualReportUrl,
       listBoardMembersUrl,
     });
-    return [response, link];
+    return [response, NaN];
   }
 }

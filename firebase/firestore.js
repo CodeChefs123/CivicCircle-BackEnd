@@ -99,7 +99,6 @@ export default class Firestore {
     try {
       let collectionRef = this.collection;
       // Traverse through nested paths and create collection references
-      const counter = 1;
       for (let i = 0; i < this.nestedPaths.length; i += 2) {
         if (this.nestedPaths.length > i + 1) {
           collectionRef = collectionRef

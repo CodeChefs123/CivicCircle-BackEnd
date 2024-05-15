@@ -1,4 +1,4 @@
-import randomImageGenerator from "../../../utils/randomImageGenerator.js";
+import randomImageGenerator from "../../../utils/helper/randomImageGenerator.js";
 import { Authentication } from "../../../firebase/authentication.js";
 import Firestore from "../../../firebase/firestore.js";
 import AuthEntity from "../AuthEntity.js";
