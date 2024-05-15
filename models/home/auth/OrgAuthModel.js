@@ -64,6 +64,7 @@ export default class OrgAuth extends AuthEntity {
       certificateRegistrationUrl,
       annualReportUrl,
       listBoardMembersUrl,
+      notifications: [],
     });
     return [response, NaN];
   }
