@@ -67,18 +67,4 @@ export default class OrgAuth extends AuthEntity {
     });
     return [response, link];
   }
-
-  loginUser() {
-    const response = this.authRef.loginUser(this.email, this.password);
-    console.log(response);
-    this.firestoreRef.uid = response.uid;
-    const data = this.firestoreRef.read();
-    console.log(data);
-    if (data[1].verified) {
-      return response;
-    } else {
-      return [false, "Account not verified"];
-    }
-    // return response;
-  }
 }

@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import PORT from "./config/app.js";
 import authRouter from "./routes/home/auth/AuthRoutes.js";
-import orgAuthRouter from "./routes/home/orgAuth/OrgAuthRoutes.js";
 
 const app = express();
 
@@ -27,7 +26,6 @@ app.use((err, _, res, __) => {
 });
 
 app.use("/auth", authRouter);
-app.use("/auth/org", orgAuthRouter);
 // Start the server
 const server = app.listen(PORT, () => {
   const host = server.address().address;
