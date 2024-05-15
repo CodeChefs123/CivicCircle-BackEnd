@@ -30,6 +30,7 @@ app.use("/auth", authRouter);
 app.use(extractUidAndVerification);
 app.use("/admin", adminVerificationRouter);
 app.use("/org/notifications", notificationRouter);
+app.use("/org/jobs", jobRouters);
 // Start the server
 const server = app.listen(PORT, () => {
   const host = server.address().address;
