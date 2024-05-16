@@ -2,7 +2,6 @@ import randomImageGenerator from "../../../utils/helper/randomImageGenerator.js"
 import { Authentication } from "../../../firebase/authentication.js";
 import Firestore from "../../../firebase/firestore.js";
 import AuthEntity from "../AuthEntity.js";
-import verifyUIDInCollection from "../../../utils/firebase/firestore/verifyUIDInCollection.js";
 import Storage from "../../../firebase/storage.js";
 
 export default class Auth extends AuthEntity {
@@ -43,13 +42,5 @@ export default class Auth extends AuthEntity {
         this.authRef.emailVerification(link),
       ],
     ];
-  }
-
-  loginUser() {
-    const response = this.authRef.loginUser(this.email, this.password);
-    console.log(response);
-    verifyUIDInCollection(response.uid, "auth/admin");
-    verifyUIDInCollection(response.uid, "auth/organization");
-    return response;
   }
 }

@@ -10,7 +10,7 @@ export default class AdminAuthModel {
     this.phoneNumber = phoneNumber;
     this.addedBy = addedBy;
     this.authRef = new Authentication();
-    this.firestoreRef = new Firestore("auth/admin");
+    this.firestoreRef = new Firestore("auth-admin");
   }
 
   createNewAdmin() {
