@@ -23,7 +23,7 @@ export class Storage {
     try {
       const storageRef = ref(storage, this.initPath + path);
       await uploadString(storageRef, imageBase64, "base64");
-      const downloadURL = await this.getDownloadURL(this.initPath + path);
+      const downloadURL = await this.getDownloadURL(path);
       return [true, downloadURL];
     } catch (error) {
       console.error("Error uploading image:", error);

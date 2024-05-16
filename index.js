@@ -9,6 +9,7 @@ import adminVerificationRouter from "./routes/AdminOrganizationVertifyRoutes.js"
 import notificationRouter from "./routes/organization/NotificationRoutes.js";
 import jobRouters from "./routes/organization/JobRoutes.js";
 import trainingRouter from "./routes/organization/TrainingRoutes.js";
+import contactUsRouter from "./routes/ContactUsRoutes.js";
 const app = express();
 
 app.use(
@@ -16,10 +17,10 @@ app.use(
     origin: "*",
   })
 );
-
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 dotenv.config();
 app.use(bodyParser.json());
-
 app.get("/", (_, res) => {
   res.send("Hello World!");
 });
@@ -30,11 +31,13 @@ app.use((err, _, res, __) => {
 });
 
 app.use("/auth", authRouter);
+app.use("/contact/us", contactUsRouter);
 app.use(extractUidAndVerification);
 app.use("/admin", adminVerificationRouter);
 app.use("/org/notifications", notificationRouter);
 app.use("/org/jobs", jobRouters);
-app.use('/org/training',trainingRouter)
+app.use("/org/training", trainingRouter);
+
 // Start the server
 const server = app.listen(PORT, () => {
   const host = server.address().address;

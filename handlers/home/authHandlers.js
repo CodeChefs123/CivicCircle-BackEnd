@@ -1,6 +1,7 @@
 export const handleSignup = async (req, res) => {
   try {
     const returnedVal = await req.auth.createUser();
+    console.log(returnedVal);
     res.json({ response: returnedVal });
   } catch (error) {
     console.error("Signup Error:", error);

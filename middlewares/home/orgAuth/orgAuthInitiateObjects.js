@@ -4,20 +4,22 @@ const orgAuthInitiateObjects = (req, _, next) => {
   const {
     email,
     password,
-    photoUrl,
+    photo,
     phoneNumber,
     certificateRegistrationByte8Array,
     annualReportByte8Array,
     listBoardMembersByte8Array,
+    name,
   } = req.body;
   req.auth = new OrgAuth(
     email,
     password,
-    photoUrl,
+    photo,
     phoneNumber,
     certificateRegistrationByte8Array,
     annualReportByte8Array,
-    listBoardMembersByte8Array
+    listBoardMembersByte8Array,
+    name
   );
   next();
 };
