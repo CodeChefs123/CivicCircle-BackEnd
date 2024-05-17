@@ -119,6 +119,7 @@ export class Authentication {
         };
       })
     );
+    
     return users;
   }
   emailVerification(url) {

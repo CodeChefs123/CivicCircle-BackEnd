@@ -24,7 +24,6 @@ export default class Auth extends AuthEntity {
       `/${uid}.${this.photoType}`,
       this.photo
     );
-    console.log(photoURL);
     await this.authRef.updateUser(response[1], {
       photoURL: photoURL || randomImageGenerator(),
       phoneNumber: this.phoneNumber || undefined,

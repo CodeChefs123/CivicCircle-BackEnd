@@ -1,6 +1,5 @@
 export const createContactUs = async (req, res) => {
   const response = await req.contactUsInstance.create();
-  console.log(response);
   res.json({ response });
 };
 export const updateContactUs = async (req, res) => {

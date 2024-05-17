@@ -1,3 +1,4 @@
+import Firestore from "../../firebase/firestore.js";
 import FirestoreAbstract from "../../firebase/firestoreAbstract.js";
 
 export default class TrainingModel extends FirestoreAbstract {

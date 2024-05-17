@@ -1,9 +1,9 @@
 // Importing necessary modules
 import { Router } from "express";
 import {
-  getBanStatus,
   banUser,
   unBanUser,
+  getTheUsers,
 } from "../handlers/admin/BanHandlers.js";
 import banInitiateObjects from "../middlewares/admin/banInitiateObjects.js";
 /**
@@ -14,7 +14,7 @@ const banRouter = Router();
 banRouter.use(banInitiateObjects);
 
 // Define GET route for getting ban status
-banRouter.get("/", getBanStatus);
+banRouter.get("/", getTheUsers);
 
 // Define POST route for banning a user
 banRouter.post("/", banUser);

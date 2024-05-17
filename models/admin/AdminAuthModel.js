@@ -24,7 +24,6 @@ export default class AdminAuthModel {
     this.firestoreRef.uid = uid;
     const storageRef = new Storage(`pfp/${uid}.png`);
     const photoURL = storageRef.uploadByte8Array(this.photo)[1];
-    console.log(photoURL);
     this.authRef.updateUser({
       photoURL,
     });

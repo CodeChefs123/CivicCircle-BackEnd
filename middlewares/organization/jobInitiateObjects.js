@@ -1,8 +1,16 @@
 import JobModel from "../../models/organization/JobModel.js";
 
 const jobInitiateObjects = (req, res, next) => {
-  const { title, country, applicants, employees, skills, description, jobID } =
-    req.body;
+  const {
+    title,
+    country,
+    applicants,
+    employees,
+    skills,
+    description,
+    jobID,
+    orgID,
+  } = req.body;
   req.job = new JobModel(
     title,
     country,
@@ -10,7 +18,8 @@ const jobInitiateObjects = (req, res, next) => {
     employees,
     skills,
     description,
-    jobID
+    jobID,
+    orgID
   );
   next();
 };

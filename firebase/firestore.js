@@ -37,7 +37,6 @@ export default class Firestore {
     }
     let docRef;
     docRef = this.uid ? collectionRef.doc(this.uid) : collectionRef.doc();
-    console.log(data);
     await docRef.set(data);
     const docID = await getDocumentIdByContent(collectionRef, data);
     return [true, docID];

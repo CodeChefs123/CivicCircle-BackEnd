@@ -6,7 +6,7 @@ const trainingInitiateObjects = (req, res, next) => {
     title,
     description,
     level,
-    skillsCovered,
+    skillsCovered ? JSON.parse(skillsCovered) : undefined,
     trainingID
   );
   next();

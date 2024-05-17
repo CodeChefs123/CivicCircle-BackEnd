@@ -1,3 +1,4 @@
+import Firestore from "../../firebase/firestore.js";
 import FirestoreAbstract from "../../firebase/firestoreAbstract.js";
 
 export default class JobModel extends FirestoreAbstract {
@@ -8,7 +9,8 @@ export default class JobModel extends FirestoreAbstract {
     employees,
     skills,
     description,
-    jobID
+    jobID,
+    orgID
   ) {
     super();
     this.createStructure = {
@@ -19,6 +21,7 @@ export default class JobModel extends FirestoreAbstract {
       skills,
       description,
       creationDate: Date.now(),
+      orgID,
     };
     this.fs = new Firestore("jobs", jobID);
     const currentRecord = this.read();
@@ -29,6 +32,7 @@ export default class JobModel extends FirestoreAbstract {
       employees: employees || currentRecord.employees,
       skills: skills || currentRecord.skills,
       description: description || currentRecord.description,
+      orgID: orgID || currentRecord.orgID,
     };
   }
 }

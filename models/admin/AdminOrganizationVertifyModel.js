@@ -4,7 +4,7 @@ import sendEmail from "../../utils/helper/sendEmail.js";
 
 export default class AdminOrganizationVertifyModel {
   constructor(uid) {
-    this.firestoreRef = new Firestore("auth/organization", uid);
+    this.firestoreRef = new Firestore("auth-organization", uid);
     this.authRef = new Authentication();
     this.uid = uid;
   }
