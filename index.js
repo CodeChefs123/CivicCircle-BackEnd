@@ -10,6 +10,7 @@ import notificationRouter from "./routes/organization/NotificationRoutes.js";
 import jobRouters from "./routes/organization/JobRoutes.js";
 import trainingRouter from "./routes/organization/TrainingRoutes.js";
 import contactUsRouter from "./routes/ContactUsRoutes.js";
+import banRouter from "./routes/BanRoutes.js";
 const app = express();
 
 app.use(
@@ -34,6 +35,7 @@ app.use("/auth", authRouter);
 app.use("/contact/us", contactUsRouter);
 app.use(extractUidAndVerification);
 app.use("/admin", adminVerificationRouter);
+app.use("/admin/ban", banRouter);
 app.use("/org/notifications", notificationRouter);
 app.use("/org/jobs", jobRouters);
 app.use("/org/training", trainingRouter);
