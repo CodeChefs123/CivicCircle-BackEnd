@@ -29,8 +29,9 @@ export default class Auth extends AuthEntity {
       phoneNumber: this.phoneNumber || undefined,
     });
     const link = await this.authRef.verificationEmail(this.email);
-    this.firestoreRef.uid = response.uid;
-    this.firestoreRef.create({
+    // this.firestoreRef.uid = response.uid;
+    const firestoreRef = new Firestore("auth", uid);
+    firestoreRef.create({
       name: this.name,
     });
     return [

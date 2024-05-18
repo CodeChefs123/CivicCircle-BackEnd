@@ -11,6 +11,16 @@ const jobInitiateObjects = (req, res, next) => {
     jobID,
     orgID,
   } = req.body;
+  console.log(
+    title,
+    country,
+    applicants,
+    employees,
+    skills,
+    description,
+    jobID,
+    orgID
+  );
   req.job = new JobModel(
     title,
     country,

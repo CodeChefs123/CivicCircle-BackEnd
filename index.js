@@ -12,6 +12,9 @@ import trainingRouter from "./routes/organization/TrainingRoutes.js";
 import contactUsRouter from "./routes/ContactUsRoutes.js";
 import banRouter from "./routes/BanRoutes.js";
 import membershipRouter from "./routes/memebershipRequestRouter.js";
+import NewsRouter from "./routes/NewsRoutes.js";
+import chatRouter from "./routes/ChatRoutes.js";
+import CVRouter from "./routes/CVRouter.js";
 const app = express();
 
 app.use(
@@ -34,6 +37,7 @@ app.use((err, _, res, __) => {
 
 app.use("/auth", authRouter);
 app.use("/contact/us", contactUsRouter);
+app.use("/chat", chatRouter);
 app.use(extractUidAndVerification);
 app.use("/admin", adminVerificationRouter);
 app.use("/admin/ban", banRouter);
@@ -41,7 +45,8 @@ app.use("/admin/membership/requests", membershipRouter);
 app.use("/org/notifications", notificationRouter);
 app.use("/org/jobs", jobRouters);
 app.use("/org/training", trainingRouter);
-
+app.use("/admin/news", NewsRouter);
+app.use("/cv", CVRouter);
 // Start the server
 const server = app.listen(PORT, () => {
   const host = server.address().address;
