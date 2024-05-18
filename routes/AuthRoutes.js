@@ -1,4 +1,5 @@
 import {
+  getUser,
   handleLogin,
   handleResetPassword,
   handleSignup,
@@ -17,5 +18,6 @@ authRouter.post("/signup", authInitiateObjects, handleSignup);
 authRouter.post("/login", authInitiateObjects, handleLogin);
 authRouter.put("/reset-password", authInitiateObjects, handleResetPassword);
 authRouter.get("/all", authInitiateObjects, handleUsers);
+authRouter.get("/user", authInitiateObjects, getUser);
 
 export default authRouter;

@@ -5,6 +5,7 @@ import {
   deleteTraining,
   getAllTrainings,
   updateTraining,
+  applyTraining,
 } from "../../handlers/organization/trainingHandlers.js";
 
 const trainingRouter = Router();
@@ -15,5 +16,5 @@ trainingRouter
   .post(createTraining)
   .put(updateTraining)
   .delete(deleteTraining);
-
+trainingRouter.put("/apply", applyTraining);
 export default trainingRouter;

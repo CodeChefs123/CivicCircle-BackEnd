@@ -35,4 +35,10 @@ export default class JobModel extends FirestoreAbstract {
       orgID: orgID || currentRecord.orgID,
     };
   }
+  apply(applicant) {
+    const currentRecord = this.fs.read();
+    currentRecord.applicants.push(applicant);
+    this.fs.update(currentRecord);
+    return true;
+  }
 }
