@@ -14,3 +14,7 @@ export const deleteJob = async (req, res) => {
   const response = await req.job.delete();
   res.json({ response });
 };
+export const applyJobs = async (req, res) => {
+  const response = await req.job.apply(req.uid);
+  res.json({ response });
+};

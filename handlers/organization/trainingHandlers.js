@@ -14,3 +14,7 @@ export const deleteTraining = async (req, res) => {
   const response = await req.trainingModel.delete();
   res.json({ response });
 };
+export const applyTraining = async (req, res) => {
+  const response = await req.trainingModel.apply(req.uid);
+  res.json({ response });
+};

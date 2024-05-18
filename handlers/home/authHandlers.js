@@ -37,3 +37,12 @@ export const handleUsers = async (req, res) => {
     res.status(500).send("Password reset failed");
   }
 };
+export const getUser = async (req, res) => {
+  try {
+    const response = await req.auth.getUser(req.uid);
+    res.json({ response });
+  } catch (error) {
+    console.log(error);
+    res.send("gefesd");
+  }
+};

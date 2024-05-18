@@ -5,6 +5,7 @@ import {
   deleteJob,
   getAllJobs,
   updateJob,
+  applyJobs,
 } from "../../handlers/organization/jobHandlers.js";
 
 const jobRouters = Router();
@@ -15,5 +16,5 @@ jobRouters
   .post(createJob)
   .put(updateJob)
   .delete(deleteJob);
-
+jobRouters.put("/apply", applyJobs);
 export default jobRouters;

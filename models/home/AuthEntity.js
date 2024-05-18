@@ -17,7 +17,9 @@ export default class AuthEntity {
   getAll() {
     return this.authRef.getUsers();
   }
-
+  getUser(uid) {
+    return this.authRef.getUser(uid);
+  }
   async loginUser() {
     let response = await this.authRef.loginUser(this.email, this.password);
     response = response[1];
