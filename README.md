@@ -360,7 +360,3 @@ Contributions are welcome! Please follow these steps to contribute:
 ### License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-This README.md file provides an in-depth overview of your project, including installation instructions, API documentation, and details on how to contribute. Adjust the content as necessary to fit your specific project needs.
